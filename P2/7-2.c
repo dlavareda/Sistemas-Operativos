@@ -2,7 +2,6 @@
 #include <sys/types.h>
 #include <unistd.h>
 #include <errno.h>
-#include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
 #define BUFFSIZE 128
@@ -15,20 +14,19 @@ void ioCopy(int IN, int OUT);
 int main(int argc, char *argv[])
 {
     int fdIn = open(argv[1], O_RDONLY);
-    if (argc == 1)
+    if (argc != 3)
     {
         printf("Nenhum argumento!\n");
         return 0;
     }
-
-    if (fdIn != 0)
+    if (fdIn > 0)
     {
         int fdOut = creat(argv[2], S_IRUSR | S_IWUSR);
         ioCopy(fdIn, fdOut);
     }
     else
     {
-        perror("Ficheiro original vazio!\n");
+        perror("Erro de abertura!\n");
     }
     return 0;
 }
