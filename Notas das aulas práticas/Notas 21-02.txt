@@ -1,0 +1,261 @@
+	---------------------------                      O -h em linux infica human readeble basicamente altera as unidades
+
+dlavareda@dlavareda-HP-ENVY-15-Notebook-PC:~$ df
+Filesystem     1K-blocks     Used Available Use% Mounted on
+udev             8157616        0   8157616   0% /dev
+tmpfs            1636004    10356   1625648   1% /run
+/dev/sda5       40773092 36898880   1773324  96% /
+tmpfs            8180012   306428   7873584   4% /dev/shm
+tmpfs               5120        4      5116   1% /run/lock
+tmpfs            8180012        0   8180012   0% /sys/fs/cgroup
+/dev/loop0          1024     1024         0 100% /snap/gnome-logs/73
+/dev/loop3         15104    15104         0 100% /snap/gnome-characters/367
+/dev/loop1        160512   160512         0 100% /snap/gnome-3-28-1804/110
+/dev/loop2        198016   198016         0 100% /snap/mailspring/407
+/dev/loop4         91264    91264         0 100% /snap/core/8213
+/dev/loop6         55936    55936         0 100% /snap/core18/1288
+/dev/loop5          4352     4352         0 100% /snap/gnome-calculator/501
+/dev/loop8        198016   198016         0 100% /snap/mailspring/402
+/dev/loop7        144128   144128         0 100% /snap/gnome-3-26-1604/97
+/dev/loop11        55936    55936         0 100% /snap/core18/1279
+/dev/loop10         8832     8832         0 100% /snap/canonical-livepatch/90
+/dev/loop9        184576   184576         0 100% /snap/spotify/35
+/dev/loop13         3840     3840         0 100% /snap/gnome-system-monitor/123
+/dev/loop12        91264    91264         0 100% /snap/core/8268
+/dev/loop14       159872   159872         0 100% /snap/gnome-3-28-1804/91
+/dev/loop17        15104    15104         0 100% /snap/gnome-characters/375
+/dev/loop15         8832     8832         0 100% /snap/canonical-livepatch/88
+/dev/loop16         4352     4352         0 100% /snap/gnome-calculator/544
+/dev/loop19         1024     1024         0 100% /snap/gnome-logs/81
+/dev/loop18       185472   185472         0 100% /snap/spotify/36
+/dev/loop20       144128   144128         0 100% /snap/gnome-3-26-1604/98
+/dev/loop21        43904    43904         0 100% /snap/gtk-common-themes/1313
+/dev/loop22         3840     3840         0 100% /snap/gnome-system-monitor/111
+/dev/loop23        45312    45312         0 100% /snap/gtk-common-themes/1353
+tmpfs            1636000       20   1635980   1% /run/user/121
+tmpfs            1636000     2992   1633008   1% /run/user/1000
+
+dlavareda@dlavareda-HP-ENVY-15-Notebook-PC:~$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+udev            7,8G     0  7,8G   0% /dev
+tmpfs           1,6G   11M  1,6G   1% /run
+/dev/sda5        39G   36G  1,7G  96% /
+tmpfs           7,9G  300M  7,6G   4% /dev/shm
+tmpfs           5,0M  4,0K  5,0M   1% /run/lock
+tmpfs           7,9G     0  7,9G   0% /sys/fs/cgroup
+/dev/loop0      1,0M  1,0M     0 100% /snap/gnome-logs/73
+/dev/loop3       15M   15M     0 100% /snap/gnome-characters/367
+/dev/loop1      157M  157M     0 100% /snap/gnome-3-28-1804/110
+/dev/loop2      194M  194M     0 100% /snap/mailspring/407
+/dev/loop4       90M   90M     0 100% /snap/core/8213
+/dev/loop6       55M   55M     0 100% /snap/core18/1288
+/dev/loop5      4,3M  4,3M     0 100% /snap/gnome-calculator/501
+/dev/loop8      194M  194M     0 100% /snap/mailspring/402
+/dev/loop7      141M  141M     0 100% /snap/gnome-3-26-1604/97
+/dev/loop11      55M   55M     0 100% /snap/core18/1279
+/dev/loop10     8,7M  8,7M     0 100% /snap/canonical-livepatch/90
+/dev/loop9      181M  181M     0 100% /snap/spotify/35
+/dev/loop13     3,8M  3,8M     0 100% /snap/gnome-system-monitor/123
+/dev/loop12      90M   90M     0 100% /snap/core/8268
+/dev/loop14     157M  157M     0 100% /snap/gnome-3-28-1804/91
+/dev/loop17      15M   15M     0 100% /snap/gnome-characters/375
+/dev/loop15     8,7M  8,7M     0 100% /snap/canonical-livepatch/88
+/dev/loop16     4,3M  4,3M     0 100% /snap/gnome-calculator/544
+/dev/loop19     1,0M  1,0M     0 100% /snap/gnome-logs/81
+/dev/loop18     182M  182M     0 100% /snap/spotify/36
+/dev/loop20     141M  141M     0 100% /snap/gnome-3-26-1604/98
+/dev/loop21      43M   43M     0 100% /snap/gtk-common-themes/1313
+/dev/loop22     3,8M  3,8M     0 100% /snap/gnome-system-monitor/111
+/dev/loop23      45M   45M     0 100% /snap/gtk-common-themes/1353
+tmpfs           1,6G   20K  1,6G   1% /run/user/121
+
+	---------------------------                      Comando para ver a pasta raíz
+
+dlavareda@dlavareda-HP-ENVY-15-Notebook-PC:~$ pwd
+/home/dlavareda
+
+tmpfs           1,6G  3,0M  1,6G   1% /run/user/1000
+
+
+	---------------------------                      CAminho relativo
+
+.. -> sobe um nivel exemplo ../etc/ --> neste caso anda para cima e entra na etc
+
+.  -> directoria actual
+
+	---------------------------                      VIasualização ficheiro (bom para experimentar /etc/passwd
+more/less - página a pagina
+cat - mostra tudo
+head - mostra primeiras 10 linhas
+tail - mostra ultimas 10 linhas
+
+
+	---------------------------                      OUtros comandos
+
+which -- onde está
+dlavareda@dlavareda-HP-ENVY-15-Notebook-PC:~$ which bash
+/bin/bash
+
+
+File -- informaçoes sobre um ficheiro
+
+dlavareda@dlavareda-HP-ENVY-15-Notebook-PC:~$ file /etc/passwd
+/etc/passwd: ASCII text
+
+dlavareda@dlavareda-HP-ENVY-15-Notebook-PC:~$ file /bin/bash
+/bin/bash: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/l, for GNU/Linux 3.2.0, BuildID[sha1]=12f73d7a8e226c663034529c8dd20efec22dde54, stripped
+
+	---------------------------                      LIstar partas
+
+ls -l a (-l lista, a hidden files, t - ordenado por tempo)
+
+
+	---------------------------                      Ajuda
+
+man ls
+info ls
+help ls
+
+	---------------------------                      Editores
+
+ed - linha a linha
+VIM
+NANO
+
+
+	---------------------------                      Meta cargas
+
+* qualquer cadeira de caracters
+
+Exemplo:
+dlavareda@dlavareda-HP-ENVY-15-Notebook-PC:~$ ls /usr/include/*.h
+/usr/include/aio.h           /usr/include/nl_types.h
+/usr/include/aliases.h       /usr/include/nss.h
+/usr/include/alloca.h        /usr/include/obstack.h
+/usr/include/argp.h          /usr/include/paths.h
+/usr/include/argz.h          /usr/include/poll.h
+/usr/include/ar.h            /usr/include/printf.h
+/usr/include/assert.h        /usr/include/proc_service.h
+/usr/include/byteswap.h      /usr/include/pthread.h
+/usr/include/complex.h       /usr/include/pty.h
+/usr/include/cpio.h          /usr/include/pwd.h
+/usr/include/crypt.h         /usr/include/re_comp.h
+/usr/include/ctype.h         /usr/include/regex.h
+/usr/include/dirent.h        /usr/include/regexp.h
+/usr/include/dlfcn.h         /usr/include/resolv.h
+/usr/include/elf.h           /usr/include/sched.h
+/usr/include/endian.h        /usr/include/search.h
+/usr/include/envz.h          /usr/include/semaphore.h
+/usr/include/err.h           /usr/include/setjmp.h
+/usr/include/errno.h         /usr/include/sgtty.h
+/usr/include/error.h         /usr/include/shadow.h
+/usr/include/execinfo.h      /usr/include/signal.h
+/usr/include/fcntl.h         /usr/include/spawn.h
+/usr/include/features.h      /usr/include/stab.h
+/usr/include/fenv.h          /usr/include/stdc-predef.h
+/usr/include/fmtmsg.h        /usr/include/stdint.h
+/usr/include/fnmatch.h       /usr/include/stdio_ext.h
+/usr/include/fstab.h         /usr/include/stdio.h
+/usr/include/fts.h           /usr/include/stdlib.h
+/usr/include/ftw.h           /usr/include/string.h
+/usr/include/_G_config.h     /usr/include/strings.h
+/usr/include/gconv.h         /usr/include/stropts.h
+/usr/include/getopt.h        /usr/include/sudo_plugin.h
+/usr/include/glob.h          /usr/include/syscall.h
+/usr/include/gnumake.h       /usr/include/sysexits.h
+/usr/include/gnu-versions.h  /usr/include/syslog.h
+/usr/include/grp.h           /usr/include/tar.h
+/usr/include/gshadow.h       /usr/include/termio.h
+/usr/include/iconv.h         /usr/include/termios.h
+/usr/include/ifaddrs.h       /usr/include/tgmath.h
+/usr/include/inttypes.h      /usr/include/thread_db.h
+/usr/include/langinfo.h      /usr/include/time.h
+/usr/include/lastlog.h       /usr/include/ttyent.h
+/usr/include/libgen.h        /usr/include/uchar.h
+/usr/include/libintl.h       /usr/include/ucontext.h
+/usr/include/libio.h         /usr/include/ulimit.h
+/usr/include/limits.h        /usr/include/unistd.h
+/usr/include/link.h          /usr/include/ustat.h
+/usr/include/locale.h        /usr/include/utime.h
+/usr/include/malloc.h        /usr/include/utmp.h
+/usr/include/math.h          /usr/include/utmpx.h
+/usr/include/mcheck.h        /usr/include/values.h
+/usr/include/memory.h        /usr/include/wait.h
+/usr/include/mntent.h        /usr/include/wchar.h
+/usr/include/monetary.h      /usr/include/wctype.h
+/usr/include/mqueue.h        /usr/include/wordexp.h
+/usr/include/netdb.h
+
+
+? qualquer caracter
+
+
+dlavareda@dlavareda-HP-ENVY-15-Notebook-PC:~$ ls /usr/include/std??.h
+/usr/include/stdio.h
+
+
+~ directorio raíz
+
+
+[] - entre, neste caso qualquer coisa que tenha extensao h, c ou s
+
+dlavareda@dlavareda-HP-ENVY-15-Notebook-PC:~$ ls /usr/include/*.[hcs]
+/usr/include/aio.h       /usr/include/envz.h       /usr/include/glob.h          /usr/include/malloc.h        /usr/include/pty.h          /usr/include/stdint.h       /usr/include/time.h
+/usr/include/aliases.h   /usr/include/err.h        /usr/include/gnumake.h       /usr/include/math.h          /usr/include/pwd.h          /usr/include/stdio_ext.h    /usr/include/ttyent.h
+/usr/include/alloca.h    /usr/include/errno.h      /usr/include/gnu-versions.h  /usr/include/mcheck.h        /usr/include/re_comp.h      /usr/include/stdio.h        /usr/include/uchar.h
+/usr/include/argp.h      /usr/include/error.h      /usr/include/grp.h           /usr/include/memory.h        /usr/include/regex.h        /usr/include/stdlib.h       /usr/include/ucontext.h
+/usr/include/argz.h      /usr/include/execinfo.h   /usr/include/gshadow.h       /usr/include/mntent.h        /usr/include/regexp.h       /usr/include/string.h       /usr/include/ulimit.h
+/usr/include/ar.h        /usr/include/fcntl.h      /usr/include/iconv.h         /usr/include/monetary.h      /usr/include/resolv.h       /usr/include/strings.h      /usr/include/unistd.h
+/usr/include/assert.h    /usr/include/features.h   /usr/include/ifaddrs.h       /usr/include/mqueue.h        /usr/include/sched.h        /usr/include/stropts.h      /usr/include/ustat.h
+/usr/include/byteswap.h  /usr/include/fenv.h       /usr/include/inttypes.h      /usr/include/netdb.h         /usr/include/search.h       /usr/include/sudo_plugin.h  /usr/include/utime.h
+/usr/include/complex.h   /usr/include/fmtmsg.h     /usr/include/langinfo.h      /usr/include/nl_types.h      /usr/include/semaphore.h    /usr/include/syscall.h      /usr/include/utmp.h
+/usr/include/cpio.h      /usr/include/fnmatch.h    /usr/include/lastlog.h       /usr/include/nss.h           /usr/include/setjmp.h       /usr/include/sysexits.h     /usr/include/utmpx.h
+/usr/include/crypt.h     /usr/include/fstab.h      /usr/include/libgen.h        /usr/include/obstack.h       /usr/include/sgtty.h        /usr/include/syslog.h       /usr/include/values.h
+/usr/include/ctype.h     /usr/include/fts.h        /usr/include/libintl.h       /usr/include/paths.h         /usr/include/shadow.h       /usr/include/tar.h          /usr/include/wait.h
+/usr/include/dirent.h    /usr/include/ftw.h        /usr/include/libio.h         /usr/include/poll.h          /usr/include/signal.h       /usr/include/termio.h       /usr/include/wchar.h
+/usr/include/dlfcn.h     /usr/include/_G_config.h  /usr/include/limits.h        /usr/include/printf.h        /usr/include/spawn.h        /usr/include/termios.h      /usr/include/wctype.h
+/usr/include/elf.h       /usr/include/gconv.h      /usr/include/link.h          /usr/include/proc_service.h  /usr/include/stab.h         /usr/include/tgmath.h       /usr/include/wordexp.h
+/usr/include/endian.h    /usr/include/getopt.h     /usr/include/locale.h        /usr/include/pthread.h       /usr/include/stdc-predef.h  /usr/include/thread_db.h
+
+
+
+	---------------------------                      Variaveis do shell
+
+SISTEMA maiusculas exemplo HOME	PATH
+
+dlavareda@dlavareda-HP-ENVY-15-Notebook-PC:~$ echo $PATH
+/home/dlavareda/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
+
+	---------------------------                     Variaveis do utilizador
+
+Syntax nome=valor
+
+dlavareda@dlavareda-HP-ENVY-15-Notebook-PC:~$ nome="diogo"
+dlavareda@dlavareda-HP-ENVY-15-Notebook-PC:~$ echo $nome
+diogo
+dlavareda@dlavareda-HP-ENVY-15-Notebook-PC:~$ unset nome
+
+	---------------------------                     Atalhos 
+
+criar um novo alias
+
+alias dir="ls -alt" 
+
+alias existentes:
+dlavareda@dlavareda-HP-ENVY-15-Notebook-PC:~$ alias
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias grep='grep --color=auto'
+alias l='ls -CF'
+alias la='ls -A'
+alias ll='ls -alF'
+alias ls='ls --color=auto'
+
+
+
+
+dlavareda@dlavareda-HP-ENVY-15-Notebook-PC:~$ gedit ~/.alias & --> o comando & executa em 2º plano
+
+
