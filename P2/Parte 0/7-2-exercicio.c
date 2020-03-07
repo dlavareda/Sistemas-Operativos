@@ -5,6 +5,16 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #define BUFFSIZE 128
+/*
+Exercício 7.2:
+Baseado no programa anterior escreva um programa principal para copiar o conteúdo dum ficheiro para outro
+usando I/O de baixo nível. Os nomes dos dois ficheiros são fornecidos como argumentos do programa. A
+cópia do ficheiro é feita por blocos de 128 bytes.
+Por exemplo ./exercicio72 exercicio72.c backup.c
+Deverá verificar todos os casos de erro e produzir mensagens de error apropriado (Dica: Utilizar a função
+perror()).
+*/
+
 void ioCopy(int IN, int OUT);
 
 int main(int argc, char *argv[])

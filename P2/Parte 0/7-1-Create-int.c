@@ -1,7 +1,11 @@
 #include <sys/stat.h>
 #include <unistd.h>
 #include <fcntl.h>
-
+/*
+Exemplo 7.1:
+O programa em baixo ilustra a criação dum ficheiro e a escrita neste ficheiro dum vector de dez inteiros.
+Ler, Escrever, Compilar e Executar o programa.
+*/
 int main()
 {
  int fd, i, vec[10];

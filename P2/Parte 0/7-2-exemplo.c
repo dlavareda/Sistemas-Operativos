@@ -3,20 +3,27 @@
 #include <unistd.h>
 #include <errno.h>
 #define BUFFSIZE 128
-void ioCopy (int IN, int OUT);
-int main(){
- ioCopy (STDIN_FILENO, STDOUT_FILENO); // 0 , 1
- return(0);
-}
-void ioCopy (int IN, int OUT) //no error reporting
+
+/*
+Exemplo 7.2:
+O programa seguinte ilustra a cópia da entrada estandardizada (teclado) para a saída estandardizada (ecrã).
+Compilar e Executar o programa.
+*/
+void ioCopy(int IN, int OUT);
+int main()
 {
- int n;
- char buf[BUFFSIZE];
- while ( ( n = read (IN, buf, BUFFSIZE)) > 0)
- {
- if (write (OUT, buf, n) != n)
- perror("Erro de escrita!\n");
- }
- if (n < 0)
- perror("Erro de leitura!\n");
+    ioCopy(STDIN_FILENO, STDOUT_FILENO); // 0 , 1
+    return (0);
+}
+void ioCopy(int IN, int OUT) //no error reporting
+{
+    int n;
+    char buf[BUFFSIZE];
+    while ((n = read(IN, buf, BUFFSIZE)) > 0)
+    {
+        if (write(OUT, buf, n) != n)
+            perror("Erro de escrita!\n");
+    }
+    if (n < 0)
+        perror("Erro de leitura!\n");
 }

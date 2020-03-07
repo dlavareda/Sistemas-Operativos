@@ -1,7 +1,9 @@
 #include <sys/stat.h>
 #include <unistd.h>
 #include <fcntl.h>
-
+/*
+(ii) Altere o programa para usar “shorts” em vez de “ints”
+*/
 int main()
 {
  int fd, i, vec[10];
