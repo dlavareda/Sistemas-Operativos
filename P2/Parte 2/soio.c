@@ -6,6 +6,7 @@
  *
  */
 #include "soio.h"
+#include <string.h> //para uso do memset
 
 SOFILE *sofopen(const char *nome, const char *mode)
 {
@@ -28,11 +29,8 @@ SOFILE *sofopen(const char *nome, const char *mode)
   return novo;
 }
 
-//Funções não implementadas
-
 int sofclose(SOFILE *fp)
 {
-  //sofclose() – fechar o ficheiro com close() e chamará a função free() duas vezes para libertar a memoria reservada
   close(fp->fd);
   free(fp->buf);
   free(fp);
@@ -40,9 +38,8 @@ int sofclose(SOFILE *fp)
 }
 
 int sofgetc(SOFILE *fp)
-{ /*substituir este codigo */
-
-  if (fp->index < 16 && fp->index > 0)
+{
+  if (fp->index > 0 && fp->index < 16)
   {
     return fp->buf[fp->index++];
   }
@@ -62,10 +59,8 @@ int sofgetc(SOFILE *fp)
 
 int sofflush(SOFILE *fp)
 {
-  while (fp->index < 16)
-  {
-    fp->buf[fp->index] = 0;
-    fp->index++;
-  }
+  memset(fp->buf, 0, 16 * sizeof(char));
+  fp->index = 0;
+  fp->size = 0;
   return 0;
 }

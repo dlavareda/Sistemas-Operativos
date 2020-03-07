@@ -2,6 +2,7 @@
     "git.ignoreLimitWarning": true,
     "files.associations": {
         "unistd.h": "c",
-        "solowlevelcp2": "c"
+        "solowlevelcp2": "c",
+        "string.h": "c"
     }
 }
