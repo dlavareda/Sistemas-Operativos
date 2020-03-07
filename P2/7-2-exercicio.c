@@ -6,29 +6,24 @@
 #include <fcntl.h>
 #define BUFFSIZE 128
 void ioCopy(int IN, int OUT);
-/*int main()
-{
-    ioCopy(STDIN_FILENO, STDOUT_FILENO); // 0 , 1
-    return (0);
-}*/
+
 int main(int argc, char *argv[])
 {
     int fdIn = open(argv[1], O_RDONLY);
     if (argc != 3)
     {
-        printf("Nenhum argumento!\n");
+        printf("Erro no formato! Faltam argumentos\n");
         return 0;
-    }
-    if (fdIn > 0)
-    {
-        int fdOut = creat(argv[2], S_IRUSR | S_IWUSR);
-        ioCopy(fdIn, fdOut);
     }
     else
     {
-        perror("Erro de abertura!\n");
+        if (fdIn > 0)
+        {
+            int fdOut = creat(argv[2], S_IRUSR | S_IWUSR);
+            ioCopy(fdIn, fdOut);
+        }
+        return 0;
     }
-    return 0;
 }
 void ioCopy(int IN, int OUT) //no error reporting
 {
