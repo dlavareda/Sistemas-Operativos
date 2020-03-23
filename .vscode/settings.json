@@ -3,6 +3,7 @@
     "files.associations": {
         "unistd.h": "c",
         "solowlevelcp2": "c",
-        "string.h": "c"
+        "string.h": "c",
+        "shell.h": "c"
     }
 }
