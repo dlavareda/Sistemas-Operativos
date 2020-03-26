@@ -4,6 +4,7 @@
         "unistd.h": "c",
         "solowlevelcp2": "c",
         "string.h": "c",
-        "shell.h": "c"
+        "shell.h": "c",
+        "wait.h": "c"
     }
 }
