@@ -97,9 +97,22 @@ int builtin(char **args, int numarg)
     bits(args[1], args[2], args[3]);
     return 1; //commando embutido
   }
-  if (0 == strcmp(args[0], "isjpeg"))
+  if (0 == strcmp(args[0], "isjpg"))
   {
-    isjpeg(args[1]);
+    if (open(args[1], O_RDONLY) > 0)
+    {
+      int result = isjpg(open(args[1], O_RDONLY));
+      if (result == 1)
+      {
+        printf("O ficheiro é jpg\n");
+      }
+      else
+      {
+        printf("O ficheiro não é jpg\n");
+      }
+    }else {
+      printf("Ficheiro não encontrado\n");
+    }
     return 1; //comando embutido
   }
   /* IMPORTANTE : 
