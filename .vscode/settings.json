@@ -5,6 +5,8 @@
         "solowlevelcp2": "c",
         "string.h": "c",
         "shell.h": "c",
-        "wait.h": "c"
+        "wait.h": "c",
+        "stdlib.h": "c",
+        "types.h": "c"
     }
 }

@@ -26,13 +26,13 @@ int main()
       linha[len - 1] = '\0';
     int numarg = parse(linha, args); /* particiona a string em argumentos */
 
-    if (!builtin(args, numarg))
+    if (!builtin(args))
       execute(numarg, args); /* executa o comando */
   }
   return 0;
 }
 
-int builtin(char **args, int numarg)
+int builtin(char **args)
 {
   if (strcmp(args[0], "sair") == 0)
   {
@@ -81,11 +81,6 @@ int builtin(char **args, int numarg)
   if (0 == strcmp(args[0], "socp"))
   {
     socp(args[1], args[2]);
-    return 1; //comando embutido
-  }
-  if (0 == strcmp(args[0], "calc") && numarg == 4)
-  {
-    calc(args[1], args[2], args[3]);
     return 1; //comando embutido
   }
   /* IMPORTANTE : 

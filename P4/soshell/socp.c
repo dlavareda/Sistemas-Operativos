@@ -8,7 +8,6 @@ void socp(char *fonte, char *destino)
         int fdOut = creat(destino, S_IRUSR | S_IWUSR);
         ioCopy(fdIn, fdOut);
     }
-    return 0;
 }
 void ioCopy(int IN, int OUT)
 {
