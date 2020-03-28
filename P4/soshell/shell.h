@@ -23,6 +23,10 @@ void ioCopy(int, int);
 int ultimo(int *, char **args);
 
 void calc(char *, char *, char *);
+
+void bits(char *, char *, char *);
+
+int isjpg(int);
 /* constantes que podem tornar uteis*/
 
 #define BG 0

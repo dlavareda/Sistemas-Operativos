@@ -88,6 +88,20 @@ int builtin(char **args, int numarg)
     calc(args[1], args[2], args[3]);
     return 1; //comando embutido
   }
+  if ((0 == strcmp(args[0], "bits") && numarg == 4) || (0 == strcmp(args[0], "bits") && (0 == strcmp(args[2], "~") && numarg == 3)))
+  {
+    if (args[3] == NULL)
+    {
+      args[3] = "";
+    }
+    bits(args[1], args[2], args[3]);
+    return 1; //commando embutido
+  }
+  if (0 == strcmp(args[0], "isjpeg"))
+  {
+    isjpeg(args[1]);
+    return 1; //comando embutido
+  }
   /* IMPORTANTE : 
    Devolver 0 para indicar que não existe comando embutido e que
    será executado usando exec() na função execute.c
