@@ -1,6 +1,6 @@
 #include "shell.h"
 
-int isjpg(int fileDescriptor) //esboço da função
+int isjpg(int fileDescriptor)
 {
     unsigned char b[4];
     read(fileDescriptor, b, 4);
