@@ -27,6 +27,8 @@ void calc(char *, char *, char *);
 void bits(char *, char *, char *);
 
 int isjpg(int);
+
+int redirects(int, char* []);
 /* constantes que podem tornar uteis*/
 
 #define BG 0

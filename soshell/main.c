@@ -1,7 +1,10 @@
 #include "shell.h"
 /*#include "parse.c"
 #include "execute.c"
-#include "socp.c"*/
+#include "socp.c"
+#include "calc.c"
+#include "redirects.c"
+#include "files.c"*/
 char prompt[100];
 
 int main()

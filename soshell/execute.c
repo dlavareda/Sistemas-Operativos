@@ -16,22 +16,26 @@ void execute(int numarg, char **args)
 
   if (pid == 0)
   {
-    execvp(*args, args); /* NOTE: as versoes execv() e
+    if (redirects(numarg, args) > 0)
+    {
+      
+      execvp(*args, args); /* NOTE: as versoes execv() e
                             * execvp() de execl() sao uteis quando */
-    perror(*args);       /* o numero de argumentos nao e. conhecido.
+      perror(*args);       /* o numero de argumentos nao e. conhecido.
                               * Os argumentos de  */
-    exit(1);             /* execv() e execvp() sao o nome do ficheiro
+    }
+    exit(1); /* execv() e execvp() sao o nome do ficheiro
                              * a ser executado e um */
-  }                      /* vector de strings que contem os
+  }          /* vector de strings que contem os
                             * argumentos. O ultimo argument */
-  
-    
-    if (FG == code)
-  { 
-    while (wait(&status) != pid)    /*spin fazer nada */;
+
+  if (FG == code)
+  {
+    while (wait(&status) != pid) /*spin fazer nada */
+      ;
   }
   return;
-} 
+}
 
 int ultimo(int *numargs, char **args)
 {
