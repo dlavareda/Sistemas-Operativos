@@ -22,7 +22,6 @@ int redirects(int numargs, char *args[])
         close(fd);
         args[numargs - 2] = NULL;
         numargs = numargs - 2;
-        return numargs;
     }
     if (strcmp(args[numargs - 2], ">>") == 0)
     {
@@ -36,7 +35,6 @@ int redirects(int numargs, char *args[])
         close(fd);
         args[numargs - 2] = NULL;
         numargs = numargs - 2;
-        return numargs;
     }
     if (strcmp(args[numargs - 2], "<") == 0)
     {
@@ -50,7 +48,6 @@ int redirects(int numargs, char *args[])
         close(fd);
         args[numargs - 2] = NULL;
         numargs = numargs - 2;
-        return numargs;
     }
     if (strcmp(args[numargs - 2], "2>") == 0)
     {
@@ -64,13 +61,6 @@ int redirects(int numargs, char *args[])
         close(fd);
         args[numargs - 2] = NULL;
         numargs = numargs - 2;
-        return numargs;
     }
-    /* int fd = open("input.txt", O_RDONLY);
-dup2(fd, 0);
-close(fd);*/
-
-    //tratar do >> open : O_WRONLY | O_APPEND
-    //tratar do < open : O_RDONLY
     return numargs;
 }
