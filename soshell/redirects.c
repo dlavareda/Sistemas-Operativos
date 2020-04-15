@@ -23,7 +23,11 @@ int redirects(int numargs, char *args[])
         args[numargs - 2] = NULL;
         numargs = numargs - 2;
     }
-    if (strcmp(args[numargs - 2], ">>") == 0)
+    if (numargs < 3)
+    {
+        return numargs;
+    }
+    if (strcmp(args[numargs - 2], ">>") == 0 && numargs > 3)
     {
         int fd = open(args[numargs - 1], O_WRONLY | O_APPEND);
         if (fd < 0)
@@ -36,7 +40,7 @@ int redirects(int numargs, char *args[])
         args[numargs - 2] = NULL;
         numargs = numargs - 2;
     }
-    if (strcmp(args[numargs - 2], "<") == 0)
+    if (strcmp(args[numargs - 2], "<") == 0 && numargs > 3)
     {
         int fd = open(args[numargs - 1], O_RDONLY);
         if (fd < 0)
@@ -49,7 +53,7 @@ int redirects(int numargs, char *args[])
         args[numargs - 2] = NULL;
         numargs = numargs - 2;
     }
-    if (strcmp(args[numargs - 2], "2>") == 0)
+    if (strcmp(args[numargs - 2], "2>") == 0 && numargs > 3)
     {
         int fd = creat(args[numargs - 1], FILE_MODE);
         if (fd < 0)
@@ -62,5 +66,8 @@ int redirects(int numargs, char *args[])
         args[numargs - 2] = NULL;
         numargs = numargs - 2;
     }
+
+    //tratar do >> open : O_WRONLY | O_APPEND
+    //tratar do < open : O_RDONLY
     return numargs;
 }

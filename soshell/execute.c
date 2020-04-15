@@ -24,8 +24,8 @@ void execute(int numarg, char **args)
       perror(*args);       /* o numero de argumentos nao e. conhecido.
                               * Os argumentos de  */
     }
-    exit(1); /* execv() e execvp() sao o nome do ficheiro
-                             * a ser executado e um */
+    exit(1); /* execv() e execvp() sao o nome do ficheiro*/
+                           /* a ser executado e um */
   }          /* vector de strings que contem os
                             * argumentos. O ultimo argument */
 
