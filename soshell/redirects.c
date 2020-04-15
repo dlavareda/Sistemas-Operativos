@@ -9,7 +9,6 @@
 
 #define FILE_MODE (S_IRUSR | S_IWUSR)
 
-int redirects(int numargs, char *args[]);
 //redirects are handled in reverse order
 // 2>  >> > <
 int redirects(int numargs, char *args[])

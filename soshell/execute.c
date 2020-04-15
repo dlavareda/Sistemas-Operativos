@@ -2,11 +2,6 @@
    execute . cria um processo prog�nito e executa um programa
 */
 #include "shell.h"
-
-int ultimo(int numargs, char **args);
-
-int containsPipe(int numArgs, char **args);
-
 void execute(int numargs, char **args)
 {
   int pid, status, pidFilho, fd[2];
