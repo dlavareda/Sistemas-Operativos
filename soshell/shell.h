@@ -20,7 +20,7 @@ void socp(char *, char *);
 
 void ioCopy(int, int);
 
-int ultimo(int *, char **args);
+int ultimo(int , char **);
 
 void calc(char *, char *, char *);
 
@@ -29,6 +29,8 @@ void bits(char *, char *, char *);
 int isjpg(int);
 
 int redirects(int, char* []);
+
+int containsPipe(int, char **);
 /* constantes que podem tornar uteis*/
 
 #define BG 0
