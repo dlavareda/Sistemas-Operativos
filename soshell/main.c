@@ -113,10 +113,36 @@ int builtin(char **args, int numarg)
       {
         printf("O ficheiro não é jpg\n");
       }
-    }else {
+    }
+    else
+    {
       printf("Ficheiro não encontrado\n");
     }
     return 1; //comando embutido
+  }
+  if (strcmp(args[0], "avisoTeste") == 0)
+  {
+    aviso(args[1], atoi(args[2]));
+    return 1;
+  }
+  if (strcmp(args[0], "aviso") == 0)
+  {
+    pthread_t th;
+    aviso_t *ptr = (aviso_t *)malloc(sizeof(aviso_t));
+    strcpy(ptr->msg, args[1]);
+    ptr->tempo = atoi(args[2]);
+    pthread_create(&th, NULL, avisowrapper, (void *)ptr);
+    return 1;
+  }
+  if (strcmp(args[0], "socpth") == 0)
+  {
+    pthread_t th;
+    copiar_t *ptr = (copiar_t *)malloc(sizeof(copiar_t));
+    strcpy(ptr->fonte, args[1]);
+    strcpy(ptr->destino, args[2]);
+    ptr->buffsize = 256;
+    pthread_create(&th, NULL, copywrapper, (void *)ptr);
+    return 1;
   }
   /* IMPORTANTE : 
    Devolver 0 para indicar que não existe comando embutido e que
