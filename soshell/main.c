@@ -5,7 +5,23 @@
 #include "calc.c"
 #include "redirects.c"
 #include "files.c"*/
+
 char prompt[100];
+
+long int findSize(char file_name[])
+{
+  FILE *f = fopen(file_name, "r");
+
+  if (f == NULL)
+  {
+    printf("Ficheiro %s nao encontrado!\n", file_name);
+    return -1;
+  }
+  fseek(f, 0L, SEEK_END);
+  long int tamanho = ftell(f);
+  fclose(f);
+  return tamanho;
+}
 
 int main()
 {
@@ -144,6 +160,89 @@ int builtin(char **args, int numarg)
     pthread_create(&th, NULL, copywrapper, (void *)ptr);
     return 1;
   }
+
+  //verificar qual é o ficherio maior
+  if (strcmp(args[0], "maior") == 0)
+  {
+
+    long int f1 = 0;
+    long int f2 = 0;
+
+    f1 = findSize(args[1]);
+    f2 = findSize(args[2]);
+
+    if (f1 != -1 && f2 != -1)
+    {
+      if (f1 == f2)
+      {
+        printf("Os ficheiros são iguais e têm de tamanho %ld KB!\n", f2);
+        return 1;
+      }
+      else if (f1 < f2)
+      {
+        printf("O ficheiro: %s é maior e tem %ld KB!\n", args[2], f2);
+        return 1;
+      }
+      else
+      {
+        printf("O ficheiro: %s é maior e tem %ld KB!\n", args[1], f1);
+        return 1;
+      }
+    }
+    return 1;
+  }
+  if (strcmp(args[0], "setx") == 0)
+  {
+    chmod(args[1], S_IXUSR);
+    printf("Adicionada permissão de execução ao owner!\n");
+    return 1;
+  }
+  if (strcmp(args[0], "removerl") == 0)
+  {
+    if (chmod(args[1], S_IRGRP | S_IROTH) == 0)
+    {
+      printf("Feita a retirada da permissão de leitura para o grupo do ficheiro %s!\n", args[1]);
+      return 1;
+    }
+    else
+    {
+      printf("Erro na alteração de atribuição do ficheiro %s!\n", args[1]);
+    }
+    return 1;
+  }
+  if (strcmp(args[0], "sols") == 0)
+  {
+    DIR *pasta;
+    struct dirent *dir;
+    struct stat st;
+    int file_count = 0;
+    if (args[1] == NULL)
+    {
+      pasta = opendir(".");
+    }
+    else
+    {
+      pasta = opendir(args[1]);
+    }
+    char tempo[100];
+    while ((dir = readdir(pasta)) != NULL)
+    {
+      file_count++;
+      stat(dir->d_name, &st);
+      strftime(tempo, sizeof tempo, "%F %H:%M:%S %Z", localtime(&st.st_mtime));
+      if (strlen(dir->d_name) < 6)
+      {
+        printf("%d: Nome: %s \t\t Inode: %ld  \t Última modificação: %s  \t  Tamanho: %ld KB\n", file_count, dir->d_name, dir->d_ino, tempo, st.st_size);
+      }
+      else
+      {
+        printf("%d: Nome: %s \t Inode: %ld  \t Última modificação: %s  \t  Tamanho: %ld KB\n", file_count, dir->d_name, dir->d_ino, tempo, st.st_size);
+      }
+    }
+    closedir(pasta);
+    return 1;
+  }
+
   /* IMPORTANTE : 
    Devolver 0 para indicar que não existe comando embutido e que
    será executado usando exec() na função execute.c

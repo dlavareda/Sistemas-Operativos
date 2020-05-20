@@ -9,6 +9,9 @@
 #include <ctype.h>
 #include <sys/wait.h>
 #include <math.h>
+#include <dirent.h>
+#include <time.h>
+#include <stdint.h>
 
 typedef struct
 {
